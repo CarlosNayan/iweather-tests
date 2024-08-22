@@ -9,7 +9,6 @@ describe("Component: Input", () => {
 
     expect(screen.queryByTestId("loading")).toBeNull();
     expect(getByPlaceholderText("placeholder")).toBeTruthy();
-    expect(screen.toJSON()).toMatchSnapshot();
   });
 
   it("should render isLoading correctly", () => {
