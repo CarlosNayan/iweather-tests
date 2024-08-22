@@ -13,6 +13,7 @@ describe("Component: SelectList", () => {
     );
 
     expect(getByText(/city 1/i)).toBeTruthy();
+    expect(screen.toJSON()).toMatchSnapshot();
   });
 
   it("should be able to select a city", () => {
