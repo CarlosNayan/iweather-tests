@@ -4,9 +4,19 @@
     "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@sentry/react-native|native-base|react-native-svg)"
   ],
   "setupFilesAfterEnv": ["@testing-library/react-native/extend-expect"],
-  "setupFiles": ["./test/@mocks/mockAsyncStorage.ts"],
+  "setupFiles": ["./test/@mocks/mockAsyncStorage.ts", "./test/@mocks/mockReactNativeSafeAreaContext.ts"],
   "transform": {
       "^.+\\.jsx?$": "babel-jest",
       "^.+\\.svg$": "jest-transformer-svg"
-    }
+    },
+    "testPathIgnorePatterns": ["./test/@mocks", "./test/coverage"],
+    "collectCoverageFrom": ["src/**/*.{ts,tsx}", "!src/**/styles.ts"],
+    "coveragePathIgnorePatterns": [
+      "./src/@types",
+      "./src/styles",
+      "./src/libs/dayjs",
+      "./src/assets",
+      "./test/@mocks"
+    ],
+    "coverageDirectory": "./test/coverage"
 }
