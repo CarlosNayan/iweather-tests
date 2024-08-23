@@ -1,6 +1,6 @@
 import { CityAPIResponse } from "@services/getCityByNameService";
 
-export const data: CityAPIResponse = {
+export const mockCityApiResponse: CityAPIResponse = {
   id: "1",
   name: "São Paulo",
   sys: {
